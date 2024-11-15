@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #ffffff;
+    background: linear-gradient(to right, white 33.33%, #292d33 33.33%);
 }
 
 li, a{
@@ -24,6 +24,7 @@ header{
     align-items: center;
     padding: 30px 10%;
     height: 80px;
+    background-color: #ffffff;
 }
 
 .logo{
@@ -70,22 +71,25 @@ button:hover {
     display: none; 
 }
 
-.background {
+
+.img-bigger{
+    margin-right: 30px;
     position: absolute;
-    width: 100%;
-    height: calc(100% - 130px);
-    background: linear-gradient(to right, white 33.33%, #292d33 33.33%);
+    top: 25%;
+    left: 33.33%; /* Там, где начинается темная часть */
+    transform: translateX(-50%); /* Сдвигает изображение на половину его ширины, чтобы центр совпал с границей */
+    width: 350px;
+    height: 500px;
 }
 
-.background::before {
-    content: "";
+.img-little{
     position: absolute;
-    top: 35%; 
-    left: 0; 
-    width: 60%;
-    height: 200px; 
-    background-color: #a35559; 
+    top: 30%;
+    left: 47%; /* Там, где начинается темная часть */
+    width: 280px;
+    height: 400px;
 }
+
 
 
 
@@ -178,4 +182,3 @@ button:hover {
         transition: all 0.3s ease 0s;
     }
 }
-
