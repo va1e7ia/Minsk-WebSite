@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
-}
-
-body{
-    background: linear-gradient(to right, white 33.33%, #292d33 33.33%);
-}
-
-li, a{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
+}
+
+#main-page{
+    background: linear-gradient(to right, white 25%, #292d33 25%);
+    background-attachment: fixed; 
+}
+
+#architecture-page {
+    width:100%;
+    height: 100vh;
+    background-color: #292d33;
+  }
+
+li, a{
+    
     font-size: 16px;
     color: #292d33;
     text-decoration: none;
@@ -25,6 +34,7 @@ header{
     padding: 30px 10%;
     height: 80px;
     background-color: #ffffff;
+    width: 100%;
 }
 
 .logo{
@@ -91,17 +101,172 @@ button:hover {
 }
 
 
+.image-container {
+    max-width: 1200px;
+    margin-top: 5%;
+    margin-left: 12%;
+    display: flex;
+    align-items: center; /* Центрирует меньшее изображение вертикально */
+    gap: 40px; /* Расстояние между изображениями */
+   
+}
+
+.bigger-img {
+    width: 450px;
+}
+
+
+.less-img {
+    width: 300px; 
+}
+
+
+
+main h1{
+    font-weight: bold;
+    color:#ffffff;
+    font-size: 55px;
+    margin-bottom: -10px;
+}
+
+main h2{
+    color:#ffffff;
+    font-weight: 400;
+}
+main p{
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text{
+    position: relative;
+}
+
+.separator {
+    height: 200px;
+    background-color: #a35559;
+    position: absolute;
+    top: 40%;
+    width: calc(100% - 500px); /* Делаем полоску, которая будет располагаться между изображениями */
+    transform: translateX(-50%); /* Центрируем полоску относительно контейнера */
+    z-index: -1;
+}
+
+footer {
+    margin-top: 87.5px;
+    background-color: #333333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+.section-content{
+   margin: 0 auto;
+   padding: 0 20px;
+   max-width: var(--site-max-width);
+}
+
+.container .gallery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container .gallery-container .img{
+    width:450px;
+    height: 250px;
+    border: 10px solid #ffffff;
+    overflow: hidden;
+}
+
+.container h1{
+    text-align: center;
+    color: #ffffff;
+}
+
+.container .gallery-container .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container .gallery-container .img:hover img{
+    transform: scale(1.1);
+}
+
+.container .pop-up {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, .8);
+}
+
+.container .pop-up img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #ffffff;
+    border-radius: 8px;
+    width: 700px;
+}
+
+.container .pop-up span{
+    color: #a35559;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height:40px;
+    background: #ffffff;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 
 
 
 
+/* Для экранов шириной до 1024px (планшеты) */
+@media (max-width: 1024px) {
+    .image-container {
+        margin-left: 5%; /* Уменьшаем отступ слева */
+        gap: 30px; /* Уменьшаем расстояние между изображениями */
+    }
 
+    .bigger-img {
+        width: 400px; /* Уменьшаем размер большего изображения */
+    }
 
+    .less-img {
+        width: 250px; /* Уменьшаем размер меньшего изображения */
+    }
 
+    main h1 {
+        font-size: 45px; /* Уменьшаем размер шрифта заголовка */
+    }
 
+    main p {
+        font-size: 18px; /* Уменьшаем размер шрифта текста */
+    }
+}
 
 @media screen and (max-width: 768px) {
+   
     .menu-toggle {
         display: inline-block;
         align-self: center; 
@@ -181,4 +346,68 @@ button:hover {
         cursor: pointer;
         transition: all 0.3s ease 0s;
     }
+
+    .separator {
+        width: 250px; /* Ширина полоски */
+        height: 600px; /* Уменьшаем высоту полоски для мобильных устройств */
+        top: 0; /* Начало полоски с верхней части */
+        left: 50%;
+        transform: translateX(-50%); /* Центрируем полоску */
+        margin-top: 20px; /* Добавляем отступ сверху */
+    }
+
+    .image-container {
+        margin-left: 0; /* Убираем отступы с боков на маленьких экранах */
+        text-align: center; /* Центрируем текст */
+        gap: 20px; /* Уменьшаем расстояние между изображениями */
+    }
+
+    .bigger-img,
+    .less-img {
+        width: 100%; /* Изображения занимают всю доступную ширину */
+        max-width: 100%; /* Обеспечивает отзывчивость */
+    }
+
+    main h1 {
+        font-size: 40px; /* Уменьшаем размер заголовка на маленьких экранах */
+    }
+
+    main h2 {
+        font-size: 24px; /* Уменьшаем размер подзаголовка */
+    }
+
+    main p {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+    .image-container {
+        flex-direction: column; /* Переводим изображения и текст в колонку */
+        margin-left: 0; /* Убираем отступ слева */
+        gap: 20px; /* Уменьшаем расстояние между изображениями */
+    }
+
+    .bigger-img {
+        width: 100%; /* Делаем изображение на весь экран */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+        margin-bottom: 20px;
+    }
+
+    .less-img {
+        width: 100%; /* Делаем изображение на весь экран */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+    }
+
+    main h1 {
+        font-size: 35px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    main p {
+        font-size: 16px; /* Уменьшаем размер шрифта текста */
+    }
+
+    #main-page{
+        background: linear-gradient(to bottom, white 25%, #292d33 25%);
+       
+    }
+ 
+    
 }
