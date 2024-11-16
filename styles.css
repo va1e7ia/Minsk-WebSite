@@ -20,6 +20,13 @@
     background-color: #292d33;
   }
 
+  #about-page{
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    height: 100vh;
+    background-color: #a35559cc;
+  }
+
 li, a{
     
     font-size: 16px;
@@ -155,7 +162,6 @@ main p{
 }
 
 footer {
-    margin-top: 87.5px;
     background-color: #333333;
     color: white;
     padding: 20px 0;
@@ -166,7 +172,6 @@ footer {
 .section-content{
    margin: 0 auto;
    padding: 0 20px;
-   max-width: var(--site-max-width);
 }
 
 .container .gallery-container{
@@ -175,6 +180,7 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 4%;
 }
 
 .container .gallery-container .img{
@@ -236,6 +242,90 @@ footer {
     border-radius: 50%;
     cursor: pointer;
 }
+
+.container h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-container{
+    width: 90%; /* Ставим ширину в процентах для адаптивности */
+    max-width: 1000px; /* Ограничиваем максимальную ширину */
+    height: 1000px;
+    margin: 50px auto;
+}
+
+.photo-all{
+    text-align: center;
+}
+
+.photo-all img{
+    width: 100%; /* Адаптивное изображение */
+    max-width: 400px; /* Максимальная ширина изображения */
+    border: 1px solid #000;
+    border-radius: 30px;
+}
+
+.photo-all h2{
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.photo-and-info{
+    margin-left: -20px;
+    flex-wrap: wrap; /* Перенос элементов на новые строки при недостатке места */
+    display: flex;
+    margin: 0 auto;
+    background-color: #ffffffa2;
+    margin-top: 50px;
+}
+
+.people{
+    flex: 1 1 250px; /* Адаптивная ширина карточки: минимум 250px */
+    max-width: 240px; /* Максимальная ширина карточки */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 250px;
+    text-align: center;
+    margin-left: 70px;
+    background-color: #a3555971;
+}
+
+.people img{
+    height: 100px; /* Добавлено для сохранения пропорций */
+    width: 100px;
+    border-radius: 50px;
+    border: 2px dashed #ffffff;
+}
+
+.people h3{
+    font-weight: bolder;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.people h4{
+    color: #292d33;
+}
+
+.people p{
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.text-info {
+    text-align: start;
+    margin-top: 20px;
+}
+
+
+
+
 
 
 
@@ -408,6 +498,22 @@ footer {
         background: linear-gradient(to bottom, white 25%, #292d33 25%);
        
     }
+
+    .photo-all img {
+        width: 80%; /* Уменьшение ширины для маленьких экранов */
+    }
+
+    .photo-and-info {
+        gap: 10px; /* Уменьшаем отступы между карточками */
+    }
+
+    .people {
+        flex: 1 1 100%; /* Карточки занимают всю ширину */
+        max-width: 70%; /* Убираем ограничение максимальной ширины */
+        
+    }
+
+    
  
     
 }
