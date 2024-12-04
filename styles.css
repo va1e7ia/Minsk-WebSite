@@ -1,75 +1,643 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* body {
+  height: 100%;
+} */
 
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-#main-page{
-    background: linear-gradient(to right, white 25%, #292d33 25%);
-    background-attachment: fixed; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#main-page {
+    height: 100vh;
+  background: linear-gradient(to right, white 25%, #292d33 25%);
+  background-attachment: fixed;
 }
 
 #architecture-page {
-    width:100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #292d33;
+}
+
+#about-page {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение */
+  height: 100vh;
+  background-color: #a35559cc;
+}
+
+#history-page {
+  background-color: #ffffff;
+}
+
+#map-page {
     height: 100vh;
-    background-color: #292d33;
-  }
-
-  #about-page{
-    display: flex;
-    flex-direction: column; /* Вертикальное расположение */
-    height: 100vh;
-    background-color: #a35559cc;
-  }
-
-li, a{
-    
-    font-size: 16px;
-    color: #292d33;
-    text-decoration: none;
+  background-color: #a35559cc;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    height: 80px;
-    background-color: #ffffff;
-    width: 100%;
+#news-page {
+  background-color: #ffffff;
 }
 
-.logo{
-    width: 80px;
-    cursor:  pointer;
+#chill-page {
+  background-color: #a35559cc;
+  width: 100%;
+  height: 100vh;
 }
 
-.nav_links{
-    list-style: none;
+#shopping-page {
+  background-color: #292d33;
+  width: 100%;
+  height: 100vh;
 }
 
-.nav_links li{
-    display:inline-block;
-    padding: 0px 10px;
+#hotels-page {
+  background-color: #a35559cc;
+  width: 100%;
+  height: 100vh;
 }
 
-.nav_links li a{
-    transition: all 0.3s ease 0s;
+li,
+a {
+  font-size: 16px;
+  color: #292d33;
+  text-decoration: none;
 }
 
-.nav_links li a:hover{
-    color: #a35559cc;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  height: 80px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.logo {
+  width: 80px;
+  cursor: pointer;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #a35559cc;
 }
 
 button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: #a35559cc;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #a35559;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.img-bigger {
+  margin-right: 30px;
+  position: absolute;
+  top: 25%;
+  left: 33.33%; /* Там, где начинается темная часть */
+  transform: translateX(
+    -50%
+  ); /* Сдвигает изображение на половину его ширины, чтобы центр совпал с границей */
+  width: 350px;
+  height: 500px;
+}
+
+.img-little {
+  position: absolute;
+  top: 30%;
+  left: 47%; /* Там, где начинается темная часть */
+  width: 280px;
+  height: 400px;
+}
+
+.container{
+    flex: 1 1 auto;
+}
+
+.image-container {
+  max-width: 1200px;
+  margin-top: 5%;
+  margin-left: 12%;
+  display: flex;
+  align-items: center; /* Центрирует меньшее изображение вертикально */
+  gap: 40px; /* Расстояние между изображениями */
+}
+
+.bigger-img {
+  width: 450px;
+}
+
+.less-img {
+  width: 300px;
+}
+
+.history-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.history-page h1 {
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.history-page h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  color: #34495e;
+}
+
+.history-page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.timeline article {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-left: 4px solid #a35559cc;
+  background-color: #a355595a;
+  border-radius: 5px;
+}
+
+.timeline article h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #a35559cc;
+}
+
+.population-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.population-page h1 {
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.population-page ul {
+  list-style-type: disc;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.population-page ul li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.population-page h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  color: #34495e;
+}
+
+.population-page article {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-left: 4px solid #a35559cc;
+  background-color: #a355595a;
+  border-radius: 5px;
+}
+
+.population-page article h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #a35559cc;
+}
+
+.population-page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.main h1 {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 55px;
+  margin-bottom: -10px;
+}
+
+.main h2 {
+  color: #ffffff;
+  font-weight: 400;
+}
+.main p {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.text {
+  position: relative;
+}
+
+.separator {
+  height: 200px;
+  background-color: #a35559;
+  position: absolute;
+  top: 40%;
+  width: calc(
+    100% - 500px
+  ); /* Делаем полоску, которая будет располагаться между изображениями */
+  transform: translateX(-50%); /* Центрируем полоску относительно контейнера */
+  z-index: -1;
+}
+
+footer {
+  background-color: #333333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.section-content {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container .gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4%;
+}
+
+.container .gallery-container .img {
+  width: 450px;
+  height: 250px;
+  border: 10px solid #ffffff;
+  overflow: hidden;
+}
+
+.container h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.container .gallery-container .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.container .gallery-container .img:hover img {
+  transform: scale(1.1);
+}
+
+.container .pop-up {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.container .pop-up img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #ffffff;
+  border-radius: 8px;
+  width: 700px;
+}
+
+.container .pop-up span {
+  color: #a35559;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.container h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.about-container {
+  width: 90%; /* Ставим ширину в процентах для адаптивности */
+  max-width: 1000px; /* Ограничиваем максимальную ширину */
+  height: 1000px;
+  margin: 50px auto;
+}
+
+.photo-all {
+  text-align: center;
+}
+
+.photo-all img {
+  width: 100%; /* Адаптивное изображение */
+  max-width: 400px; /* Максимальная ширина изображения */
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+
+.photo-all h2 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.photo-and-info {
+  margin-left: -20px;
+  flex-wrap: wrap; /* Перенос элементов на новые строки при недостатке места */
+  display: flex;
+  margin: 0 auto;
+  background-color: #ffffffa2;
+  margin-top: 50px;
+}
+
+.people {
+  flex: 1 1 250px; /* Адаптивная ширина карточки: минимум 250px */
+  max-width: 240px; /* Максимальная ширина карточки */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 250px;
+  text-align: center;
+  margin-left: 70px;
+  background-color: #a3555971;
+}
+
+.people img {
+  height: 100px; /* Добавлено для сохранения пропорций */
+  width: 100px;
+  border-radius: 50px;
+  border: 2px dashed #ffffff;
+}
+
+.people h3 {
+  font-weight: bolder;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.people h4 {
+  color: #292d33;
+}
+
+.people p {
+  font-weight: 500;
+  font-size: 15px;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.text-info {
+  text-align: start;
+  margin-top: 20px;
+}
+
+.map-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.map-container h1 {
+font-size: 40px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+iframe {
+  width: 70%;
+  height: 70%;
+  filter: invert(100%);
+}
+
+.news-container {
+  width: 100%;
+}
+
+.blog-section {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.blog-section .title {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+.blog-section .title h2 {
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.blog-section .title p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  margin: 25px auto;
+}
+
+.cards .card {
+  width: 100%;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px 20px;
+}
+
+.card-content h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-content p {
+  font-size: 15px;
+}
+
+.card .posted-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #a35559;
+}
+
+/* Для экранов шириной до 1024px (планшеты) */
+@media (max-width: 1024px) {
+  .image-container {
+    margin-left: 5%; /* Уменьшаем отступ слева */
+    gap: 30px; /* Уменьшаем расстояние между изображениями */
+  }
+
+  .bigger-img {
+    width: 400px; /* Уменьшаем размер большего изображения */
+  }
+
+  .less-img {
+    width: 250px; /* Уменьшаем размер меньшего изображения */
+  }
+
+  main h1 {
+    font-size: 45px; /* Уменьшаем размер шрифта заголовка */
+  }
+
+  main p {
+    font-size: 18px; /* Уменьшаем размер шрифта текста */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+    align-self: center;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #a35559cc;
+  }
+  .logo {
+    width: 50px;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+
+  .nav_links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 250px;
+    background-color: #ffffff;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav_links.active {
+    left: 0;
+  }
+
+  .nav_links li {
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  .nav_links li a {
+    font-size: 18px;
+    color: #292d33;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav_links li a:hover {
+    color: #a35559;
+  }
+
+  .blur-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+
+  .blur-background.active {
+    display: block;
+  }
+
+  button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 10px;
     color: #ffffff;
     text-decoration: none;
     padding: 9px 25px;
@@ -78,442 +646,83 @@ button {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-}
+  }
 
-button:hover {
-    background-color: #a35559;
-}
+  .separator {
+    width: 250px; /* Ширина полоски */
+    height: 600px; /* Уменьшаем высоту полоски для мобильных устройств */
+    top: 0; /* Начало полоски с верхней части */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем полоску */
+    margin-top: 20px; /* Добавляем отступ сверху */
+  }
 
-.menu-toggle {
-    display: none; 
-}
+  .image-container {
+    margin-left: 0; /* Убираем отступы с боков на маленьких экранах */
+    text-align: center; /* Центрируем текст */
+    gap: 20px; /* Уменьшаем расстояние между изображениями */
+  }
 
+  .bigger-img,
+  .less-img {
+    width: 100%; /* Изображения занимают всю доступную ширину */
+    max-width: 100%; /* Обеспечивает отзывчивость */
+  }
 
-.img-bigger{
-    margin-right: 30px;
-    position: absolute;
-    top: 25%;
-    left: 33.33%; /* Там, где начинается темная часть */
-    transform: translateX(-50%); /* Сдвигает изображение на половину его ширины, чтобы центр совпал с границей */
-    width: 350px;
-    height: 500px;
-}
+  main h1 {
+    font-size: 40px; /* Уменьшаем размер заголовка на маленьких экранах */
+  }
 
-.img-little{
-    position: absolute;
-    top: 30%;
-    left: 47%; /* Там, где начинается темная часть */
-    width: 280px;
-    height: 400px;
-}
+  main h2 {
+    font-size: 24px; /* Уменьшаем размер подзаголовка */
+  }
 
+  main p {
+    font-size: 16px; /* Уменьшаем размер текста */
+  }
+  .image-container {
+    flex-direction: column; /* Переводим изображения и текст в колонку */
+    margin-left: 0; /* Убираем отступ слева */
+    gap: 20px; /* Уменьшаем расстояние между изображениями */
+  }
 
-.image-container {
-    max-width: 1200px;
-    margin-top: 5%;
-    margin-left: 12%;
-    display: flex;
-    align-items: center; /* Центрирует меньшее изображение вертикально */
-    gap: 40px; /* Расстояние между изображениями */
-   
-}
-
-.bigger-img {
-    width: 450px;
-}
-
-
-.less-img {
-    width: 300px; 
-}
-
-
-
-main h1{
-    font-weight: bold;
-    color:#ffffff;
-    font-size: 55px;
-    margin-bottom: -10px;
-}
-
-main h2{
-    color:#ffffff;
-    font-weight: 400;
-}
-main p{
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.text{
-    position: relative;
-}
-
-.separator {
-    height: 200px;
-    background-color: #a35559;
-    position: absolute;
-    top: 40%;
-    width: calc(100% - 500px); /* Делаем полоску, которая будет располагаться между изображениями */
-    transform: translateX(-50%); /* Центрируем полоску относительно контейнера */
-    z-index: -1;
-}
-
-footer {
-    background-color: #333333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-
-.section-content{
-   margin: 0 auto;
-   padding: 0 20px;
-}
-
-.container .gallery-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 4%;
-}
-
-.container .gallery-container .img{
-    width:450px;
-    height: 250px;
-    border: 10px solid #ffffff;
-    overflow: hidden;
-}
-
-.container h1{
-    text-align: center;
-    color: #ffffff;
-}
-
-.container .gallery-container .img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.container .gallery-container .img:hover img{
-    transform: scale(1.1);
-}
-
-.container .pop-up {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background: rgba(0, 0, 0, .8);
-}
-
-.container .pop-up img{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    border: 5px solid #ffffff;
-    border-radius: 8px;
-    width: 700px;
-}
-
-.container .pop-up span{
-    color: #a35559;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    width: 40px;
-    height:40px;
-    background: #ffffff;
-    font-size: 50px;
-    font-weight: 900;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.container h1{
-    margin-top: 20px;
+  .bigger-img {
+    width: 100%; /* Делаем изображение на весь экран */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
     margin-bottom: 20px;
-    font-weight: bold;
-}
+  }
 
-.about-container{
-    width: 90%; /* Ставим ширину в процентах для адаптивности */
-    max-width: 1000px; /* Ограничиваем максимальную ширину */
-    height: 1000px;
-    margin: 50px auto;
-}
+  .less-img {
+    width: 100%; /* Делаем изображение на весь экран */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+  }
 
-.photo-all{
-    text-align: center;
-}
+  main h1 {
+    font-size: 35px; /* Уменьшаем размер шрифта заголовка */
+  }
 
-.photo-all img{
-    width: 100%; /* Адаптивное изображение */
-    max-width: 400px; /* Максимальная ширина изображения */
-    border: 1px solid #000;
-    border-radius: 30px;
-}
+  main p {
+    font-size: 16px; /* Уменьшаем размер шрифта текста */
+  }
 
-.photo-all h2{
-    font-weight: bold;
-    margin-top: 20px;
-}
+  #main-page {
+    background: linear-gradient(to bottom, white 25%, #292d33 25%);
+  }
 
-.photo-and-info{
-    margin-left: -20px;
-    flex-wrap: wrap; /* Перенос элементов на новые строки при недостатке места */
-    display: flex;
-    margin: 0 auto;
-    background-color: #ffffffa2;
-    margin-top: 50px;
-}
+  .photo-all img {
+    width: 80%; /* Уменьшение ширины для маленьких экранов */
+  }
 
-.people{
-    flex: 1 1 250px; /* Адаптивная ширина карточки: минимум 250px */
-    max-width: 240px; /* Максимальная ширина карточки */
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 250px;
-    text-align: center;
-    margin-left: 70px;
-    background-color: #a3555971;
-}
+  .photo-and-info {
+    gap: 10px; /* Уменьшаем отступы между карточками */
+  }
 
-.people img{
-    height: 100px; /* Добавлено для сохранения пропорций */
-    width: 100px;
-    border-radius: 50px;
-    border: 2px dashed #ffffff;
-}
+  .people {
+    flex: 1 1 100%; /* Карточки занимают всю ширину */
+    max-width: 70%; /* Убираем ограничение максимальной ширины */
+  }
 
-.people h3{
-    font-weight: bolder;
-    color: #ffffff;
-    margin-top: 20px;
-}
-
-.people h4{
-    color: #292d33;
-}
-
-.people p{
-    font-weight: 500;
-    font-size: 15px;
-    color: #ffffff;
-    margin-top: 20px;
-}
-
-.text-info {
-    text-align: start;
-    margin-top: 20px;
-}
-
-
-
-
-
-
-
-
-
-/* Для экранов шириной до 1024px (планшеты) */
-@media (max-width: 1024px) {
-    .image-container {
-        margin-left: 5%; /* Уменьшаем отступ слева */
-        gap: 30px; /* Уменьшаем расстояние между изображениями */
-    }
-
-    .bigger-img {
-        width: 400px; /* Уменьшаем размер большего изображения */
-    }
-
-    .less-img {
-        width: 250px; /* Уменьшаем размер меньшего изображения */
-    }
-
-    main h1 {
-        font-size: 45px; /* Уменьшаем размер шрифта заголовка */
-    }
-
-    main p {
-        font-size: 18px; /* Уменьшаем размер шрифта текста */
-    }
-}
-
-@media screen and (max-width: 768px) {
-   
-    .menu-toggle {
-        display: inline-block;
-        align-self: center; 
-        background-color: transparent;
-        border: none; 
-        font-size: 24px; 
-        cursor: pointer;
-        color: #a35559cc; 
-    }
-    .logo{
-        width: 50px;
-        cursor:  pointer;
-        margin: 0 auto;
-    }
-
-    .nav_links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        height: 100%; 
-        width: 250px; 
-        background-color: #ffffff;
-        padding-top: 20px; 
-        display: flex;
-        flex-direction: column;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        transition: left 0.3s ease; 
-        z-index: 1000;
-    }
-
-    .nav_links.active {
-        left: 0; 
-    }
-
-    .nav_links li {
-        padding: 10px 20px;
-        text-align: left;
-    }
-
-    .nav_links li a {
-        font-size: 18px;
-        color: #292d33;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .nav_links li a:hover {
-        color: #a35559; 
-    }
-
-    .blur-background {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px); 
-        z-index: 999; 
-    }
-
-    .blur-background.active {
-        display: block;
-    }
-
-    button {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 10px;
-        color: #ffffff;
-        text-decoration: none;
-        padding: 9px 25px;
-        background-color: #a35559cc;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-    }
-
-    .separator {
-        width: 250px; /* Ширина полоски */
-        height: 600px; /* Уменьшаем высоту полоски для мобильных устройств */
-        top: 0; /* Начало полоски с верхней части */
-        left: 50%;
-        transform: translateX(-50%); /* Центрируем полоску */
-        margin-top: 20px; /* Добавляем отступ сверху */
-    }
-
-    .image-container {
-        margin-left: 0; /* Убираем отступы с боков на маленьких экранах */
-        text-align: center; /* Центрируем текст */
-        gap: 20px; /* Уменьшаем расстояние между изображениями */
-    }
-
-    .bigger-img,
-    .less-img {
-        width: 100%; /* Изображения занимают всю доступную ширину */
-        max-width: 100%; /* Обеспечивает отзывчивость */
-    }
-
-    main h1 {
-        font-size: 40px; /* Уменьшаем размер заголовка на маленьких экранах */
-    }
-
-    main h2 {
-        font-size: 24px; /* Уменьшаем размер подзаголовка */
-    }
-
-    main p {
-        font-size: 16px; /* Уменьшаем размер текста */
-    }
-    .image-container {
-        flex-direction: column; /* Переводим изображения и текст в колонку */
-        margin-left: 0; /* Убираем отступ слева */
-        gap: 20px; /* Уменьшаем расстояние между изображениями */
-    }
-
-    .bigger-img {
-        width: 100%; /* Делаем изображение на весь экран */
-        max-width: 300px; /* Ограничиваем максимальную ширину */
-        margin-bottom: 20px;
-    }
-
-    .less-img {
-        width: 100%; /* Делаем изображение на весь экран */
-        max-width: 300px; /* Ограничиваем максимальную ширину */
-    }
-
-    main h1 {
-        font-size: 35px; /* Уменьшаем размер шрифта заголовка */
-    }
-
-    main p {
-        font-size: 16px; /* Уменьшаем размер шрифта текста */
-    }
-
-    #main-page{
-        background: linear-gradient(to bottom, white 25%, #292d33 25%);
-       
-    }
-
-    .photo-all img {
-        width: 80%; /* Уменьшение ширины для маленьких экранов */
-    }
-
-    .photo-and-info {
-        gap: 10px; /* Уменьшаем отступы между карточками */
-    }
-
-    .people {
-        flex: 1 1 100%; /* Карточки занимают всю ширину */
-        max-width: 70%; /* Убираем ограничение максимальной ширины */
-        
-    }
-
-    
- 
-    
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
