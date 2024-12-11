@@ -32,7 +32,7 @@
 
 #about-page {
   display: flex;
-  flex-direction: column; /* Вертикальное расположение */
+  flex-direction: column; 
   height: 100vh;
   background-color: #a35559cc;
 }
@@ -66,6 +66,19 @@
   background-color: #a35559cc;
   width: 100%;
   height: 100vh;
+}
+
+@keyframes rainbow {
+  0% { color:#a35559cc }
+  20% { color: #a35559db }
+  40% { color:#753a3ddb }
+  60% { color:#a355599d }
+  80% { color:#753a3ddb}
+  100% { color: #a355599d  }
+}
+
+#minsk {
+  animation: rainbow 3s infinite; 
 }
 
 li,
@@ -133,10 +146,10 @@ button:hover {
   margin-right: 30px;
   position: absolute;
   top: 25%;
-  left: 33.33%; /* Там, где начинается темная часть */
+  left: 33.33%;
   transform: translateX(
     -50%
-  ); /* Сдвигает изображение на половину его ширины, чтобы центр совпал с границей */
+  ); 
   width: 350px;
   height: 500px;
 }
@@ -144,7 +157,7 @@ button:hover {
 .img-little {
   position: absolute;
   top: 30%;
-  left: 47%; /* Там, где начинается темная часть */
+  left: 47%; 
   width: 280px;
   height: 400px;
 }
@@ -158,8 +171,8 @@ button:hover {
   margin-top: 5%;
   margin-left: 12%;
   display: flex;
-  align-items: center; /* Центрирует меньшее изображение вертикально */
-  gap: 40px; /* Расстояние между изображениями */
+  align-items: center; 
+  gap: 40px; 
 }
 
 .bigger-img {
@@ -281,9 +294,11 @@ button:hover {
   font-weight: 400;
 }
 
-.text {
-  position: relative;
-}
+  .text {
+    position: relative;
+  }
+
+
 
 .separator {
   height: 200px;
@@ -292,8 +307,8 @@ button:hover {
   top: 40%;
   width: calc(
     100% - 500px
-  ); /* Делаем полоску, которая будет располагаться между изображениями */
-  transform: translateX(-50%); /* Центрируем полоску относительно контейнера */
+  ); 
+  transform: translateX(-50%); 
   z-index: -1;
 }
 
@@ -353,10 +368,8 @@ footer {
 }
 
 .container .pop-up img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block; 
+  margin:10% auto 0;
   border: 5px solid #ffffff;
   border-radius: 8px;
   width: 700px;
@@ -378,6 +391,18 @@ footer {
   cursor: pointer;
 }
 
+
+
+.container .pop-up-text {
+  margin-right: 50px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .container h1 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -385,8 +410,8 @@ footer {
 }
 
 .about-container {
-  width: 90%; /* Ставим ширину в процентах для адаптивности */
-  max-width: 1000px; /* Ограничиваем максимальную ширину */
+  width: 90%; 
+  max-width: 1000px; 
   height: 1000px;
   margin: 50px auto;
 }
@@ -396,8 +421,8 @@ footer {
 }
 
 .photo-all img {
-  width: 100%; /* Адаптивное изображение */
-  max-width: 400px; /* Максимальная ширина изображения */
+  width: 100%;
+  max-width: 400px; 
   border: 1px solid #000;
   border-radius: 30px;
 }
@@ -409,7 +434,7 @@ footer {
 
 .photo-and-info {
   margin-left: -20px;
-  flex-wrap: wrap; /* Перенос элементов на новые строки при недостатке места */
+  flex-wrap: wrap; 
   display: flex;
   margin: 0 auto;
   background-color: #ffffffa2;
@@ -417,8 +442,8 @@ footer {
 }
 
 .people {
-  flex: 1 1 250px; /* Адаптивная ширина карточки: минимум 250px */
-  max-width: 240px; /* Максимальная ширина карточки */
+  flex: 1 1 250px; 
+  max-width: 240px; 
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
@@ -430,7 +455,7 @@ footer {
 }
 
 .people img {
-  height: 100px; /* Добавлено для сохранения пропорций */
+  height: 100px; 
   width: 100px;
   border-radius: 50px;
   border: 2px dashed #ffffff;
@@ -543,27 +568,26 @@ iframe {
   background-color: #a35559;
 }
 
-/* Для экранов шириной до 1024px (планшеты) */
 @media (max-width: 1024px) {
   .image-container {
-    margin-left: 5%; /* Уменьшаем отступ слева */
-    gap: 30px; /* Уменьшаем расстояние между изображениями */
+    margin-left: 5%; 
+    gap: 30px; 
   }
 
   .bigger-img {
-    width: 400px; /* Уменьшаем размер большего изображения */
+    width: 400px; 
   }
 
   .less-img {
-    width: 250px; /* Уменьшаем размер меньшего изображения */
+    width: 250px; 
   }
 
   main h1 {
-    font-size: 45px; /* Уменьшаем размер шрифта заголовка */
+    font-size: 45px; 
   }
 
   main p {
-    font-size: 18px; /* Уменьшаем размер шрифта текста */
+    font-size: 18px; 
   }
 }
 
@@ -649,60 +673,60 @@ iframe {
   }
 
   .separator {
-    width: 250px; /* Ширина полоски */
-    height: 600px; /* Уменьшаем высоту полоски для мобильных устройств */
-    top: 0; /* Начало полоски с верхней части */
+    width: 250px; 
+    height: 600px; 
+    top: 0; 
     left: 50%;
-    transform: translateX(-50%); /* Центрируем полоску */
-    margin-top: 20px; /* Добавляем отступ сверху */
+    transform: translateX(-50%); 
+    margin-top: 20px; 
   }
 
   .image-container {
-    margin-left: 0; /* Убираем отступы с боков на маленьких экранах */
-    text-align: center; /* Центрируем текст */
-    gap: 20px; /* Уменьшаем расстояние между изображениями */
+    margin-left: 0; 
+    text-align: center; 
+    gap: 20px;
   }
 
   .bigger-img,
   .less-img {
-    width: 100%; /* Изображения занимают всю доступную ширину */
-    max-width: 100%; /* Обеспечивает отзывчивость */
+    width: 100%; 
+    max-width: 100%; 
   }
 
   main h1 {
-    font-size: 40px; /* Уменьшаем размер заголовка на маленьких экранах */
+    font-size: 40px; 
   }
 
   main h2 {
-    font-size: 24px; /* Уменьшаем размер подзаголовка */
+    font-size: 24px; 
   }
 
   main p {
-    font-size: 16px; /* Уменьшаем размер текста */
+    font-size: 16px;
   }
   .image-container {
-    flex-direction: column; /* Переводим изображения и текст в колонку */
-    margin-left: 0; /* Убираем отступ слева */
-    gap: 20px; /* Уменьшаем расстояние между изображениями */
+    flex-direction: column; 
+    margin-left: 0; 
+    gap: 20px; 
   }
 
   .bigger-img {
-    width: 100%; /* Делаем изображение на весь экран */
-    max-width: 300px; /* Ограничиваем максимальную ширину */
+    width: 100%; 
+    max-width: 300px; 
     margin-bottom: 20px;
   }
 
   .less-img {
-    width: 100%; /* Делаем изображение на весь экран */
-    max-width: 300px; /* Ограничиваем максимальную ширину */
+    width: 100%; 
+    max-width: 300px; 
   }
 
   main h1 {
-    font-size: 35px; /* Уменьшаем размер шрифта заголовка */
+    font-size: 35px; 
   }
 
   main p {
-    font-size: 16px; /* Уменьшаем размер шрифта текста */
+    font-size: 16px; 
   }
 
   #main-page {
@@ -710,16 +734,16 @@ iframe {
   }
 
   .photo-all img {
-    width: 80%; /* Уменьшение ширины для маленьких экранов */
+    width: 80%; 
   }
 
   .photo-and-info {
-    gap: 10px; /* Уменьшаем отступы между карточками */
+    gap: 10px; 
   }
 
   .people {
-    flex: 1 1 100%; /* Карточки занимают всю ширину */
-    max-width: 70%; /* Убираем ограничение максимальной ширины */
+    flex: 1 1 100%; 
+    max-width: 70%;
   }
 
   .cards {
